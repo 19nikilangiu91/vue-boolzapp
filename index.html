@@ -24,7 +24,7 @@
                 <section class="utente d-flex justify-content-between align-items-center">
                     <!-- Image Avatar + Nome Utente -->
                     <div class="image-utente">
-                        <img class="image-avatar ms-2"src="" alt="">
+                        <img class="image-avatar ms-2" src="./img/avatar_io.jpg" alt="Avatar_io">
                         <span class="ms-2">Niki</span>
                     </div>
                     <!-- Icone -->
@@ -54,37 +54,15 @@
 
                 <!-- Sezione Contatti -->
                 <section class="lista-contatti-container overflow-auto">
-                    <div class="contatto">
-                        <img class="image-avatar ms-2 my-2"src="" alt="">
-                        <span class="ms-2">Nome Utente</span>
-                    </div>
-                    <div class="contatto">
-                        <img class="image-avatar ms-2 my-2"src="" alt="">
-                        <span class="ms-2">Nome Utente</span>
-                    </div>
-                    <div class="contatto">
-                        <img class="image-avatar ms-2 my-2"src="" alt="">
-                        <span class="ms-2">Nome Utente</span>
-                    </div>
-                    <div class="contatto">
-                        <img class="image-avatar ms-2 my-2"src="" alt="">
-                        <span class="ms-2">Nome Utente</span>
-                    </div>
-                    <div class="contatto">
-                        <img class="image-avatar ms-2 my-2"src="" alt="">
-                        <span class="ms-2">Nome Utente</span>
-                    </div>
-                    <div class="contatto">
-                        <img class="image-avatar ms-2 my-2"src="" alt="">
-                        <span class="ms-2">Nome Utente</span>
-                    </div>
-                    <div class="contatto">
-                        <img class="image-avatar ms-2 my-2"src="" alt="">
-                        <span class="ms-2">Nome Utente</span>
-                    </div>
-                    <div class="contatto">
-                        <img class="image-avatar ms-2 my-2"src="" alt="">
-                        <span class="ms-2">Nome Utente</span>
+                    <div v-for="contact in contacts" class="contatto-container d-flex">
+                        <div>
+                            <img class="image-avatar ms-2 my-2" :src="contact.avatar" alt="">
+                        </div>
+                        <div class="ms-3 mt-1 w-100">
+                            <span>{{contact.name}}</span>
+                            <span class="testo-ultimo d-block">Ultimo messaggio inviato</span>
+                        </div>
+                        <div class="ora me-3">12:00</div>
                     </div>
                 </section>
             </aside>

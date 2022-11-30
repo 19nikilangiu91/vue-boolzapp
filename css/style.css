@@ -96,6 +96,15 @@ i{
     border: 1px solid #f9f9f9; 
 }
 
+.testo-ultimo{
+    font-size: 12px;
+    color: #d4d3d4;
+}
+
+.ora{
+    color: #d4d3d4; 
+}
+
 /*---------- Main Header Rules---------- */
 
 .main{
