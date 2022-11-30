@@ -1,0 +1,168 @@
+/* General Rules */
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Container Rules */
+.container-fluid{
+    height: 100vh;
+    /* DEBUG */
+    background: linear-gradient(180deg,#009688 20%,#dcdbd1 20%);
+}
+
+.container{
+    height: 90%;
+    width: 80%;
+    /* DEBUG */
+    /* background-color: yellow; */
+}
+
+/*----------Aside Rules---------- */
+
+.asidebar{
+    width: 30%;
+    height: 100%;
+    /* DEBUG */
+    /* background-color: red; */
+}
+
+/* Sezione utente */
+
+.utente{
+    width: 100%;
+    height: 10vh;
+    background-color:#eaeaea;
+}
+
+img{
+    /* DEBUG */
+    border: 1px solid #b1b1b1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+i{
+    color: #b1b1b1;
+}
+
+/* Sezione Notifiche */
+
+.notifiche{
+    width: 100%;
+    height: 10vh;
+    background-color: #8edafc;
+}
+
+.fa-regular.fa-bell-slash{
+    border-radius: 50px;
+    color:#8dd9fb;
+    background-color:white;
+}
+
+/* Sezione Ricerca */
+
+.ricerca{
+    background-color: #f9f9f9;
+    height: 10vh;
+    /* DEBUG */
+    /* border: 1px solid black; */
+}
+
+.fas.fa-search{
+    border: 1px solid #f9f9f9;
+    background-color: white;
+    border-radius: 50px 0 0 50px;
+}
+
+.ricerca-input{
+    border: none;
+    outline: none;
+    width: 75%;
+    height: 34px;
+    border: 1px solid #f9f9f9;
+    border-radius: 0 50px 50px 0;
+}
+
+/* Sezione Contatti */
+
+.lista-contatti-container{
+    height: calc(100% - 30vh);
+    background-color:#ffffff;
+}
+
+.contatto{
+    border: 1px solid #f9f9f9; 
+}
+
+/*---------- Main Header Rules---------- */
+
+.main{
+    width: 70%;
+    height: 100%;
+    background-image: url(../img/mine.jpg);
+}
+
+/* Sezione Controllo-Chat */
+
+.controllo-chat{
+    width: 100%;
+    height: 10vh;
+    background-color: #eaeaea;
+    border-left: 1px solid #b1b1b1;
+}
+
+/* ---------- Main Middle Rules ----------*/
+
+/* Sezione Chat */
+
+.chat{
+    width: 100%;
+    height: 80vh;
+    /* DEBUG */
+    /* background-color: blue; */
+}
+
+.contenitore-messaggio::after{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+.messaggio-inviato{
+    height: 50px;
+    width: 40%;
+    margin: 25px 0;
+    background-color:#d5f9ba;
+    float: right;
+}
+
+.messaggio-ricevuto{
+    height: 50px;
+    width: 40%;
+    margin: 35px 0;
+    background-color: #ffffff;
+    float: left;
+}
+
+/* ---------- Main Footer Rules ---------- */
+
+/* Sezione Input-Chat */
+
+.input-chat{
+    width: 100%;
+    height: 10vh;
+    /* DEBUG */
+    background-color: #f3eeea;
+}
+
+.testo-messaggio{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.far.fa-smile,.fas.fa-microphone{
+    color: #6c7374;
+}
