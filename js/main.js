@@ -6,7 +6,7 @@ const { createApp } = Vue
         contacts: [
           {
               name: 'Michele',
-              avatar: './img/avatar_1.jpg',
+              avatar: '_1',
               visible: true,
               messages: [
                   {
@@ -29,7 +29,7 @@ const { createApp } = Vue
 
           {
               name: 'Fabio',
-              avatar: './img/avatar_2.jpg',
+              avatar: '_2',
               visible: true,
               messages: [
                   {
@@ -52,7 +52,7 @@ const { createApp } = Vue
 
           {
               name: 'Samuele',
-              avatar: './img/avatar_3.jpg',
+              avatar: '_3',
               visible: true,
               messages: [
                   {
@@ -75,7 +75,7 @@ const { createApp } = Vue
 
           {
               name: 'Alessandro B.',
-              avatar: './img/avatar_4.jpg',
+              avatar: '_4',
               visible: true,
               messages: [
                   {
@@ -93,7 +93,7 @@ const { createApp } = Vue
 
           {
               name: 'Alessandro L.',
-              avatar: './img/avatar_1.jpg',
+              avatar: '_1',
               visible: true,
               messages: [
                   {
@@ -111,7 +111,7 @@ const { createApp } = Vue
 
           {
               name: 'Massimo',
-              avatar: './img/avatar_2.jpg',
+              avatar: '_2',
               visible: true,
               messages: [
                   {
@@ -134,7 +134,7 @@ const { createApp } = Vue
 
           {
               name: 'Federico',
-              avatar: './img/avatar_3.jpg',
+              avatar: '_3',
               visible: true,
               messages: [
                   {
@@ -152,7 +152,7 @@ const { createApp } = Vue
 
           {
               name: 'Davide',
-              avatar: './img/avatar_4.jpg',
+              avatar: '_4',
               visible: true,
               messages: [
                   {

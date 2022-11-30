@@ -54,9 +54,9 @@
 
                 <!-- Sezione Contatti -->
                 <section class="lista-contatti-container overflow-auto">
-                    <div v-for="contact in contacts" class="contatto-container d-flex">
+                    <div v-for="(contact, index) in contacts" class="contatto-container d-flex">
                         <div>
-                            <img class="image-avatar ms-2 my-2" :src="contact.avatar" alt="">
+                            <img class="image-avatar ms-2 my-2" :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
                         </div>
                         <div class="ms-3 mt-1 w-100">
                             <span>{{contact.name}}</span>
