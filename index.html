@@ -73,10 +73,10 @@
                 <section class="controllo-chat d-flex justify-content-between align-items-center">
                     <div class="contatto-chat d-flex">
                         <div>
-                            <img class="image-avatar ms-2 my-2"src="" alt="">
+                            <img class="image-avatar ms-2 my-2" :src="'img/avatar' + contacts[personaAttiva].avatar + '.jpg'" alt="">
                         </div>
                         <div class="my-2">
-                            <span class="ms-2">Nome Utente</span>
+                            <span class="ms-2">{{contacts[personaAttiva].name}}</span>
                             <span class="testo-ultimo d-block ms-2">Ultimo Accesso oggi alle 12:00</span>
                         </div>
                     </div>
