@@ -91,17 +91,8 @@
                 <!-- Sezione Chat -->
                 <section class="chat overflow-auto">
                     <div class="contenitore-messaggio m-4 p-4 d-flex flex-column">
-                        <div class="messaggio inviato">Messaggio-inviato</div>
-                        <div class="messaggio ricevuto">Messaggio-ricevuto</div>
-                        <div class="messaggio inviato">Messaggio-inviato</div>
-                        <div class="messaggio ricevuto">Messaggio-ricevuto</div>
-                        <div class="messaggio inviato">Messaggio-inviato</div>
-                        <div class="messaggio ricevuto">Messaggio-ricevuto</div>
-                        <div class="messaggio inviato">Messaggio-inviato</div>
-                        <div class="messaggio ricevuto">Messaggio-ricevuto</div>
-                        <div class="messaggio inviato">Messaggio-inviato</div>
-                        <div class="messaggio ricevuto">Messaggio-ricevuto</div>
-                    </section>
+                        <div v-for="messaggio in contacts[personaAttiva].messages" class="messaggio rounded p-2 my-2" :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto'">{{messaggio.message}}</div>
+                </section>
 
                 <!-- Sezione Input-Chat -->
                 <section class="input-chat d-flex justify-content-start align-items-center">
