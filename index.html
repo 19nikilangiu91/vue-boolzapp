@@ -52,17 +52,19 @@
                     <input type="text" class="ricerca-input" placeholder="Cerca o inizia una nuova ricerca">
                 </section>
 
-                <!-- Sezione Contatti -->
+                <!-- Sezione Contatti - Milestone 1B - Visualizzazione dinamica della lista contatti -->
                 <section class="lista-contatti-container overflow-auto">
-                    <div v-for="(contact, index) in contacts" class="contatto-container d-flex">
-                        <div>
-                            <img class="image-avatar ms-2 my-2" :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+                    <div v-for="(contact, indice) in contacts" class="contatto-container">
+                        <!-- Milestone 2B - Click sul contatto -->
+                        <div class="cambia-persona d-flex" @click="cambiaPersona(indice)" :class="indice === cambiaPersona ?'user-active' : ''">
+                            <img class="image-avatar ms-2 my-2" :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+
+                            <div class="ms-3 mt-1 w-100">
+                                <span>{{contact.name}}</span>
+                                <span class="testo-ultimo d-block">Ultimo messaggio inviato</span>
+                            </div>
+                            <div class="ora me-3">12:00</div>
                         </div>
-                        <div class="ms-3 mt-1 w-100">
-                            <span>{{contact.name}}</span>
-                            <span class="testo-ultimo d-block">Ultimo messaggio inviato</span>
-                        </div>
-                        <div class="ora me-3">12:00</div>
                     </div>
                 </section>
             </aside>
@@ -73,7 +75,7 @@
                 <section class="controllo-chat d-flex justify-content-between align-items-center">
                     <div class="contatto-chat d-flex">
                         <div>
-                            <img class="image-avatar ms-2 my-2" :src="'img/avatar' + contacts[personaAttiva].avatar + '.jpg'" alt="">
+                            <img class="image-avatar ms-2 my-2" :src="'img/avatar' + contacts[personaAttiva].avatar + '.jpg'" :alt="contacts[personaAttiva].name">
                         </div>
                         <div class="my-2">
                             <span class="ms-2">{{contacts[personaAttiva].name}}</span>
@@ -88,10 +90,13 @@
                     </div>
                 </section>
 
-                <!-- Sezione Chat -->
+                <!-- Sezione Chat Milestone 2A - Visualizzazione dinamica dei messaggi -->
                 <section class="chat overflow-auto">
                     <div class="contenitore-messaggio m-4 p-4 d-flex flex-column">
-                        <div v-for="messaggio in contacts[personaAttiva].messages" class="messaggio rounded p-2 my-2" :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto'">{{messaggio.message}}</div>
+                        <div v-for="messaggio in contacts[personaAttiva].messages" class="messaggio d-flex justify-content-between rounded p-2 my-2" :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto'">{{messaggio.message}}
+                            <span class="align-self-end">12:00</span>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Sezione Input-Chat -->

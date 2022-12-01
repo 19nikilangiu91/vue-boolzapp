@@ -90,6 +90,7 @@ i{
 .lista-contatti-container{
     height: calc(100% - 30vh);
     background-color:#ffffff;
+    cursor: pointer;
 }
 
 .contatto{
@@ -122,6 +123,10 @@ i{
     border-left: 1px solid #b1b1b1;
 }
 
+.cambia-persona:hover{
+    background-color: #eaeaea;
+}
+
 /* ---------- Main Middle Rules ----------*/
 
 /* Sezione Chat */
@@ -132,7 +137,6 @@ i{
     /* DEBUG */
     /* background-color: blue; */
 }
-
 
 .inviato{
     height: 70px;

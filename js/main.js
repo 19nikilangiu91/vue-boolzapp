@@ -175,5 +175,16 @@ const { createApp } = Vue
         ],
         personaAttiva: 0,
       }
+    },
+
+    // Milestone 2B: Click sul contatto mostra la conversazione del contatto cliccato.
+
+    // Metodi
+    methods:{
+        // cambiaPersona.
+        cambiaPersona(indice){
+            this.personaAttiva = indice;
+        }
     }
+    
 }).mount("#myApp")
