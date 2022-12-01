@@ -133,26 +133,19 @@ i{
     /* background-color: blue; */
 }
 
-.contenitore-messaggio::after{
-    content:"";
-    display: table;
-    clear: both;
-}
 
-.messaggio-inviato{
-    height: 50px;
+.inviato{
+    height: 70px;
     width: 40%;
-    margin: 25px 0;
+    align-self: end;
     background-color:#d5f9ba;
-    float: right;
 }
 
-.messaggio-ricevuto{
-    height: 50px;
+.ricevuto{
+    height: 70px;
     width: 40%;
-    margin: 35px 0;
+    align-self: start;
     background-color: #ffffff;
-    float: left;
 }
 
 /* ---------- Main Footer Rules ---------- */
