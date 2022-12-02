@@ -94,7 +94,7 @@
                 <section class="chat overflow-auto">
                     <div class="contenitore-messaggio m-4 p-4 d-flex flex-column">
                         <div v-for="messaggio in contacts[personaAttiva].messages" class="messaggio d-flex justify-content-between rounded p-2 my-2" :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto'">{{messaggio.message}}
-                            <span class="align-self-end">12:00</span>
+                            <span class="ora-testo-messaggio align-self-end ">12:00</span>
                         </div>
                     </div>
                 </section>
@@ -102,7 +102,7 @@
                 <!-- Sezione Input-Chat -->
                 <section class="input-chat d-flex justify-content-start align-items-center">
                     <i class="far fa-smile mx-3"></i>
-                    <!-- // Milestone 3A: Aggiunta di un messaggio. -->
+                    <!-- Milestone 3A: Aggiunta di un messaggio. -->
                     <input type="text" class="testo-messaggio w-100" placeholder="Scrivi un messaggio"
                     v-model="nuovoMessaggio" @KeyUp.enter="invioNuovoMessaggio">
                     <i class="fas fa-microphone mx-3"></i>

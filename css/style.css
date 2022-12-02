@@ -104,6 +104,7 @@ i{
 
 .ora{
     color: #d4d3d4; 
+    font-size: 10px;
 }
 
 /*---------- Main Header Rules---------- */
@@ -138,19 +139,27 @@ i{
     /* background-color: blue; */
 }
 
+.messaggio{
+    font-size: 12px;
+}
+
 .inviato{
     height: 70px;
-    width: 40%;
+    width: 50%;
     align-self: end;
     background-color:#d5f9ba;
 }
 
 .ricevuto{
     height: 70px;
-    width: 40%;
+    width: 50%;
     align-self: start;
     background-color: #ffffff;
 }
+
+.ora-testo-messaggio{
+    font-size: 10px;
+} 
 
 /* ---------- Main Footer Rules ---------- */
 

@@ -175,33 +175,46 @@ const { createApp } = Vue
         ],
         personaAttiva: 0,
         nuovoMessaggio: '',
+        selezioneRicerca: '',
       }
     },
 
     // Metodi
-      methods:{
-        // Milestone 2B: Click sul contatto: mostra la conversazione del contatto cliccato.
-        // cambiaPersona.
-        cambiaPersona(indice){
-            this.personaAttiva = indice;
-        },
-
-        // Milestone 3A: Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde.
-        // invioNuovoMessaggio
-        invioNuovoMessaggio(){
-          this.contacts[this.personaAttiva].messages.push(
-            {
-              date: '10/01/2020 15:30:55',
-              message: this.nuovoMessaggio,
-              status: 'sent'
-            },
-          )
-          
-          // Svuoto il v-model="nuovoMessaggio" per poter inserire un nuovo messaggio.
-          this.nuovoMessaggio = '';
-        },
-
+    methods:{
       
-      }
-    
+      // Milestone 2B: Click sul contatto: mostra la conversazione del contatto cliccato.
+      // cambiaPersona.
+      cambiaPersona(indice){
+          this.personaAttiva = indice;
+      },
+      
+      // Milestone 3A: Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde.
+      // invioNuovoMessaggio
+      invioNuovoMessaggio(){
+        this.contacts[this.personaAttiva].messages.push(
+          {
+            date: '10/01/2020 15:30:55',
+            message: this.nuovoMessaggio,
+            status: 'sent'
+          },
+        )
+        
+        // Svuoto il v-model="nuovoMessaggio" per poter inserire un nuovo messaggio.
+        this.nuovoMessaggio = '';
+
+        // Milestone 3B-b: Vado a settare il setTimeout per ricere la risposta dopo un secondo.
+        setTimeout(this.ricevutoNuovoMessaggio, 1000);
+      },
+
+      // Milestone 3B-a: Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+      ricevutoNuovoMessaggio(){
+        this.contacts[this.personaAttiva].messages.push(
+          {
+            date: '10/01/2020 15:51:00',
+            message: 'OK!!',
+            status: 'received'
+          }
+        )
+      },
+    }
 }).mount("#myApp")
