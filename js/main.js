@@ -179,12 +179,29 @@ const { createApp } = Vue
     },
 
     // Metodi
-    methods:{
-        // Milestone 2B: Click sul contatto mostra la conversazione del contatto cliccato.
+      methods:{
+        // Milestone 2B: Click sul contatto: mostra la conversazione del contatto cliccato.
         // cambiaPersona.
         cambiaPersona(indice){
             this.personaAttiva = indice;
         },
-    },
+
+        // Milestone 3A: Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde.
+        // invioNuovoMessaggio
+        invioNuovoMessaggio(){
+          this.contacts[this.personaAttiva].messages.push(
+            {
+              date: '10/01/2020 15:30:55',
+              message: this.nuovoMessaggio,
+              status: 'sent'
+            },
+          )
+          
+          // Svuoto il v-model="nuovoMessaggio" per poter inserire un nuovo messaggio.
+          this.nuovoMessaggio = '';
+        },
+
+      
+      }
     
 }).mount("#myApp")
