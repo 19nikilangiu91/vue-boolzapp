@@ -187,7 +187,7 @@ const { createApp } = Vue
       cambiaPersona(indice){
           this.personaAttiva = indice;
       },
-      
+
       // Milestone 3A: Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde.
       // invioNuovoMessaggio
       invioNuovoMessaggio(){
@@ -216,5 +216,16 @@ const { createApp } = Vue
           }
         )
       },
+
+      // Milestone 4: Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina).
+
+      cerca(indice){
+        cercaNomePersona = this.contacts[indice].name.toLowerCase();
+          if(cercaNomePersona.includes(this.selezioneRicerca)){
+            return true;
+          }else{
+            return false;
+          }
+      }
     }
 }).mount("#myApp")

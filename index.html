@@ -49,23 +49,28 @@
                 <section class="ricerca d-flex align-items-center py-2">
 
                     <i class="fas fa-search p-2 ms-4"></i>
-                    <input type="text" class="ricerca-input" placeholder="Cerca o inizia una nuova ricerca">
+                    <!-- Milesto 4b - Ricerca utente -->
+                    <input type="text" class="ricerca-input" placeholder="Cerca o inizia una nuova ricerca"
+                    v-model="selezioneRicerca">
                 </section>
 
                 <!-- Sezione Contatti - Milestone 1B - Visualizzazione dinamica della lista contatti -->
                 <section class="lista-contatti-container overflow-auto">
-                    <div v-for="(contact, indice) in contacts" class="contatto-container">
-                        <!-- Milestone 2B - Click sul contatto -->
-                        <div class="cambia-persona d-flex" @click="cambiaPersona(indice)" :class="indice === cambiaPersona ? 'cambia-persona' : ''">
-                            <img class="image-avatar ms-2 my-2" :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
-
-                            <div class="ms-3 mt-1 w-100">
-                                <span>{{contact.name}}</span>
-                                <span class="testo-ultimo d-block">Ultimo messaggio inviato</span>
+                    <template v-for="(contact, indice) in contacts" class="contatto-container">
+                        <!-- Milesto 4a - Ricerca utente -->
+                        <div v-if="cerca(indice)">
+                            <!-- Milestone 2B - Click sul contatto -->
+                            <div class="cambia-persona d-flex" @click="cambiaPersona(indice)" :class="indice === cambiaPersona ? 'cambia-persona' : ''">
+                                <img class="image-avatar ms-2 my-2" :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+    
+                                <div class="ms-3 mt-1 w-100">
+                                    <span>{{contact.name}}</span>
+                                    <span class="testo-ultimo d-block">{{contact.messages[contact.messages.length -1].message}}</span>
+                                </div>
+                                <div class="ora me-3">{{contact.messages[contact.messages.length -1].date}}</div>
                             </div>
-                            <div class="ora me-3">12:00</div>
                         </div>
-                    </div>
+                    </template>
                 </section>
             </aside>
 
@@ -79,7 +84,7 @@
                         </div>
                         <div class="my-2">
                             <span class="ms-2">{{contacts[personaAttiva].name}}</span>
-                            <span class="testo-ultimo d-block ms-2">Ultimo Accesso oggi alle 12:00</span>
+                            <span class="testo-ultimo d-block ms-2">Ultimo Accesso oggi alle {{contacts[personaAttiva].messages[contacts[personaAttiva].messages.length -1].date}}</span>
                         </div>
                     </div>
                     <!-- Icone Contatto -->
@@ -94,7 +99,7 @@
                 <section class="chat overflow-auto">
                     <div class="contenitore-messaggio m-4 p-4 d-flex flex-column">
                         <div v-for="messaggio in contacts[personaAttiva].messages" class="messaggio d-flex justify-content-between rounded p-2 my-2" :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto'">{{messaggio.message}}
-                            <span class="ora-testo-messaggio align-self-end ">12:00</span>
+                            <span class="ora-testo-messaggio align-self-end ">{{messaggio.date}}</span>
                         </div>
                     </div>
                 </section>
