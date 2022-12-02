@@ -56,7 +56,7 @@
                 <section class="lista-contatti-container overflow-auto">
                     <div v-for="(contact, indice) in contacts" class="contatto-container">
                         <!-- Milestone 2B - Click sul contatto -->
-                        <div class="cambia-persona d-flex" @click="cambiaPersona(indice)" :class="indice === cambiaPersona ?'user-active' : ''">
+                        <div class="cambia-persona d-flex" @click="cambiaPersona(indice)" :class="indice === cambiaPersona ? 'cambia-persona' : ''">
                             <img class="image-avatar ms-2 my-2" :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
 
                             <div class="ms-3 mt-1 w-100">
